@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %}About{% endblock title %} 
+{%block body%} 
+{% load static %}
+{%for obj in aboutObj%}
+ <div class="container my-4">
+  <div class="row featurette d-flex justify-content-center align-item-center">
+    <div class="col-md-7">
+      <h2 class="featurette-heading fw-normal lh-1">
+        {{obj.title}}
+        <span class="text-body-secondary">{{obj.subtitle}}</span>
+      </h2>
+      <p class="lead">{{obj.description}}</p>
+    </div>
+    <div class="col-md-5">
+      <img
+        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+        width="300"
+        height="300"
+        xmln
+        src={{obj.image.url}}
+      />
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock body %}
+{% comment %} <div class="container my-4"></div>
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading fw-normal lh-1">
+        Oh yeah, it's that good.
+        <span class="text-body-secondary">See for yourself.</span>
+      </h2>
+      <p class="lead">
+        “In nature, nothing is perfect and everything is perfect. Trees can be
+        contorted, bent in weird ways, and they’re still beautiful.
+      </p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img
+        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+        width="300"
+        height="300"
+        xmlns
+        src="/static/about/about2.jpg"
+      />
+    </div>
+  </div> {% endcomment %}
